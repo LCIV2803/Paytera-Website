@@ -251,7 +251,7 @@
         <div class="support-email-card fade-in">
             <h3>Envíanos un mensaje</h3>
             <p>Escríbenos a nuestro correo y te responderemos en menos de 2 horas.</p>
-            <a href="mailto:info@paytera.mx">info@paytera.mx</a>
+            <a href="/cdn-cgi/l/email-protection#d8b1b6beb798a8b9a1acbdaab9f6b5a0"><span class="__cf_email__" data-cfemail="20494e464f60504159544552410e4d58">[email&#160;protected]</span></a>
         </div>
     </div>
 </section>
@@ -269,20 +269,32 @@
     </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const f=document.querySelectorAll('.fade-in');const o=new IntersectionObserver(e=>{e.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);o.unobserve(e.target)}})},{threshold:.15});f.forEach(e=>o.observe(e));
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'})})});
 document.getElementById('notifyBtn').addEventListener('click',function(){
     const email=document.getElementById('notifyEmail').value;
     if(email&&email.includes('@')){
-        document.getElementById('notifyForm').style.display='none';
-        document.getElementById('notifySuccess').classList.add('show');
+        const btn=document.getElementById('notifyBtn');
+        btn.textContent='Enviando...';
+        btn.disabled=true;
+        fetch('https://script.google.com/macros/s/AKfycbyYrhLH8ZM8loLuUICjlq7HcbZh8yGRSrCN6gRBQqbvwtX5WhiyU7bwsiaiB1Rtnfvu/exec',{
+            method:'POST',
+            mode:'no-cors',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({email:email})
+        }).then(()=>{
+            document.getElementById('notifyForm').style.display='none';
+            document.getElementById('notifySuccess').classList.add('show');
+        }).catch(()=>{
+            document.getElementById('notifyForm').style.display='none';
+            document.getElementById('notifySuccess').classList.add('show');
+        });
     }else{
         document.getElementById('notifyEmail').style.borderColor='#ef4444';
-        setTimeout(()=>document.getElementById('notifyEmail').style.borderColor='',1500);
+        setTimeout(()=>document.getElementById('notifyEmail').style.borderColor='#e5e7eb',2000);
     }
 });
-document.getElementById('notifyEmail').addEventListener('keypress',function(e){if(e.key==='Enter')document.getElementById('notifyBtn').click()});
 </script>
 </body>
 </html>
