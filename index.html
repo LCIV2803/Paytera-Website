@@ -152,10 +152,109 @@
         }
         @media (max-width: 600px) {
             .phone { width: 270px; height: 560px; }
+            .demo-wrap .phone { width: 250px; height: 542px; }
+            .demo-wrap .phone-screen { border-radius: 30px; }
             .hero-text h1 { font-size: 2.6rem; letter-spacing: -1.5px; }
             .notify-input { min-width: 100%; }
         }
-    </style>
+    
+/* === DEMO ANIMATION === */
+
+.demo-wrap { display: flex; justify-content: center; }
+.demo-wrap .phone { width: 290px; height: 628px; background: #1a1a1a; border-radius: 46px; padding: 12px; box-shadow: 0 30px 80px rgba(0,0,0,.25), 0 0 0 1px rgba(255,255,255,.1) inset; position: relative; }
+
+.demo-wrap .phone{width:290px;height:628px;background:#1a1a1a;border-radius:46px;padding:12px;box-shadow:0 30px 80px rgba(0,0,0,.25),0 0 0 1px rgba(255,255,255,.1) inset;position:relative}
+.demo-wrap .phone::before{content:'';position:absolute;top:12px;left:50%;transform:translateX(-50%);width:90px;height:26px;background:#1a1a1a;border-radius:0 0 16px 16px;z-index:100}
+.demo-wrap .phone-screen{width:100%;height:100%;background:#EEF1F7;border-radius:36px;overflow:hidden;position:relative}
+.demo-wrap .scr{position:absolute;inset:0;opacity:0;transition:none;display:flex;flex-direction:column}
+.demo-wrap .scr.active{opacity:1;z-index:2}
+.demo-wrap .scr.slide-left{transform:translateX(-100%);opacity:1;z-index:1}
+.demo-wrap .scr.slide-right{transform:translateX(100%);opacity:1;z-index:3}
+.demo-wrap .scr.animating{transition:transform .35s cubic-bezier(.4,0,.2,1),opacity .35s}
+.demo-wrap .sbar-top{position:absolute;top:0;left:0;right:0;padding:12px 24px 0;display:flex;justify-content:space-between;align-items:center;z-index:50;color:#fff;font-size:10px;font-weight:600}
+.demo-wrap .tap{position:absolute;width:36px;height:36px;border-radius:50%;background:rgba(12,128,246,.15);border:2px solid rgba(12,128,246,.35);z-index:90;pointer-events:none;opacity:0;transition:opacity .25s;transform:translate(-50%,-50%)}
+.demo-wrap .tap.show{opacity:1}.tap.press{transform:translate(-50%,-50%) scale(.65);background:rgba(12,128,246,.3);transition:transform .12s,opacity .25s}
+.demo-wrap .replay{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);padding:6px 14px;border-radius:20px;background:rgba(0,0,0,.06);font-size:10px;font-weight:600;color:#9CA3AF;z-index:60;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;display:none}
+.demo-wrap .hero-bg{background:linear-gradient(155deg,#0C80F6 0%,#0A6ED8 40%,#0755B0 100%);padding:46px 18px 22px;position:relative;overflow:hidden}
+.demo-wrap .hero-bg::after{content:'';position:absolute;width:150px;height:150px;background:radial-gradient(circle,rgba(58,154,255,.3) 0%,transparent 70%);top:-40px;right:-20px;border-radius:50%}
+.demo-wrap .hero-bg *{position:relative;z-index:1}
+.demo-wrap .greet{font-size:14px;color:rgba(255,255,255,.8)}.greet-sub{font-size:10px;color:rgba(255,255,255,.6);margin-top:2px}
+.demo-wrap .act-row{display:flex;gap:7px;margin-top:14px}
+.demo-wrap .act-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 0;border-radius:12px;cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
+.demo-wrap .act-btn.primary{background:#fff}.act-btn.secondary{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25)}
+.demo-wrap .act-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.demo-wrap .act-btn.primary .act-icon{background:rgba(12,128,246,.1)}.act-btn.secondary .act-icon{background:rgba(255,255,255,.15)}
+.demo-wrap .act-btn.primary svg{stroke:#0C80F6}.act-btn.secondary svg{stroke:#fff}
+.demo-wrap .act-icon svg{width:14px;height:14px;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.demo-wrap .act-lbl{font-size:10px;font-weight:600}.act-btn.primary .act-lbl{color:#0C80F6}.act-btn.secondary .act-lbl{color:#fff}
+.demo-wrap .curve{height:16px;background:#EEF1F7;margin-top:-14px;border-radius:16px 16px 0 0;position:relative;z-index:2}
+.demo-wrap .sec-hdr{display:flex;justify-content:space-between;padding:0 14px 6px}.sec-title{font-size:11px;font-weight:700;color:#111827}.sec-badge{background:rgba(12,128,246,.1);color:#0C80F6;font-size:8px;font-weight:700;padding:2px 5px;border-radius:6px;margin-left:4px}.sec-link{font-size:9px;color:#0C80F6;font-weight:600}
+.demo-wrap .req-card{background:#fff;margin:0 14px 8px;border-radius:12px;padding:10px 12px;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+.demo-wrap .req-top{display:flex;align-items:center;gap:8px}
+.demo-wrap .av{width:30px;height:30px;border-radius:50%;background:linear-gradient(145deg,#0C80F6,#0A6AD4);display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:9px;font-weight:800;color:#fff;flex-shrink:0}
+.demo-wrap .req-nm{font-size:11px;font-weight:600;color:#111827}.req-note{font-size:9px;color:#9CA3AF}.req-amt{margin-left:auto;text-align:right}.req-val{font-size:12px;font-weight:700;color:#111827}.req-time{font-size:8px;color:#9CA3AF}
+.demo-wrap .req-badge{display:inline-flex;align-items:center;gap:2px;padding:2px 6px;border-radius:6px;font-size:8px;font-weight:600;margin-top:6px}
+.demo-wrap .req-badge.in{background:#FEF3C7;color:#B45309}.req-badge.out{background:#DCFCE7;color:#16A34A}
+.demo-wrap .req-badge svg{width:8px;height:8px;stroke:currentColor;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.demo-wrap .req-btns{display:flex;gap:4px;margin-top:6px}
+.demo-wrap .req-btn{padding:5px 12px;border-radius:8px;font-size:9px;font-weight:600;border:none;font-family:'DM Sans',sans-serif}
+.demo-wrap .req-btn.ghost{background:#F3F4F6;color:#6B7280}.req-btn.blue{background:#0C80F6;color:#fff}
+.demo-wrap .fnav{height:50px;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-radius:18px;display:flex;align-items:center;justify-content:space-around;margin:0 12px 8px;box-shadow:0 2px 12px rgba(0,0,0,.06);flex-shrink:0}
+.demo-wrap .fnav-i{display:flex;flex-direction:column;align-items:center;gap:1px;font-size:7px;color:#9CA3AF;font-weight:500}
+.demo-wrap .fnav-i svg{width:15px;height:15px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.demo-wrap .pbtn{width:38px;height:38px;background:linear-gradient(145deg,#0C80F6,#0A6AD4);border-radius:13px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(12,128,246,.3);margin-top:-12px}
+.demo-wrap .pbtn svg{width:22px;height:22px;fill:none}.pbtn path{fill:#fff}
+.demo-wrap .pulse{animation:pa 1.5s ease-in-out infinite}
+@keyframes pa{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.5)}50%{box-shadow:0 0 0 6px rgba(255,255,255,0)}}
+.demo-wrap .ts{display:flex;align-items:center;padding:46px 14px 10px;background:#fff}
+.demo-wrap .ts svg{width:18px;height:18px;stroke:#111827;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.demo-wrap .ts-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;color:#111827;flex:1;text-align:center;margin-right:18px}
+.demo-wrap .search-row{display:flex;gap:6px;padding:0 14px 8px}
+.demo-wrap .search-bar{flex:1;display:flex;align-items:center;gap:6px;padding:8px 10px;border-radius:10px;background:#EEF1F7;font-size:10px;color:#9CA3AF}
+.demo-wrap .search-bar svg{width:13px;height:13px;stroke:#9CA3AF;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.demo-wrap .qr-btn{width:34px;height:34px;border-radius:10px;background:#EEF1F7;display:flex;align-items:center;justify-content:center}
+.demo-wrap .qr-btn svg{width:15px;height:15px;stroke:#111827;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.demo-wrap .flbl{font-size:9px;font-weight:700;color:#9CA3AF;text-transform:uppercase;letter-spacing:.05em;padding:6px 14px 4px}
+.demo-wrap .friend{display:flex;align-items:center;gap:8px;padding:7px 14px}.friend.sel{background:rgba(12,128,246,.06);border-radius:10px;margin:0 6px}
+.demo-wrap .f-nm{font-size:11px;font-weight:600;color:#111827}.f-h{font-size:9px;color:#9CA3AF}
+.demo-wrap .f-arrow svg{width:13px;height:13px;stroke:#9CA3AF;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.demo-wrap .f-info{flex:1}
+.demo-wrap .amt-pg{display:flex;flex-direction:column;height:100%;background:#fff}
+.demo-wrap .amt-hdr{display:flex;align-items:center;justify-content:space-between;padding:46px 14px 8px}
+.demo-wrap .amt-hdr svg{width:18px;height:18px;stroke:#111827;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.demo-wrap .amt-hdr-t{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;color:#111827}
+.demo-wrap .amt-recip{display:flex;align-items:center;gap:8px;padding:4px 14px 8px}
+.demo-wrap .amt-area{flex:0;display:flex;flex-direction:column;align-items:center;padding:8px 0 4px}
+.demo-wrap .amt-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:40px;font-weight:800;color:#111827}.amt-val .cents{font-size:18px;color:#9CA3AF}
+.demo-wrap .amt-mid{padding:0 14px}
+.demo-wrap .amt-bank{display:flex;align-items:center;gap:8px;padding:8px 12px;background:#EEF1F7;border-radius:10px;margin-bottom:6px}
+.demo-wrap .amt-bank-ic{width:24px;height:24px;background:#1A1F71;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:6px;font-weight:800;color:#fff;font-family:'Plus Jakarta Sans',sans-serif}
+.demo-wrap .amt-bank-nm{font-size:10px;font-weight:600;color:#111827}.amt-bank-dt{font-size:8px;color:#9CA3AF}
+.demo-wrap .priv-row{display:flex;gap:4px;margin-bottom:6px}
+.demo-wrap .priv-chip{padding:5px 10px;border-radius:20px;font-size:9px;font-weight:600;border:1px solid #E5E7EB;color:#9CA3AF;background:#fff;display:flex;align-items:center;gap:3px}
+.demo-wrap .priv-chip.on{background:rgba(12,128,246,.08);border-color:#0C80F6;color:#0C80F6}
+.demo-wrap .emoji-row{display:flex;gap:2px;margin-bottom:4px;overflow:hidden}
+.demo-wrap .emoji-btn{width:26px;height:26px;border-radius:8px;background:#EEF1F7;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;border:none}
+.demo-wrap .desc-inp{width:100%;padding:8px 10px;border-radius:8px;border:1.5px solid #E5E7EB;font-size:10px;font-family:'DM Sans',sans-serif;color:#111827;outline:none;margin-bottom:4px;background:#fff}
+.demo-wrap .send-btn{width:100%;padding:10px;border-radius:12px;font-size:12px;font-weight:700;text-align:center;border:none;font-family:'DM Sans',sans-serif}
+.demo-wrap .send-btn.off{background:#E5E7EB;color:#9CA3AF}.send-btn.on{background:linear-gradient(145deg,#0C80F6,#0A6AD4);color:#fff;box-shadow:0 4px 12px rgba(12,128,246,.25)}
+.demo-wrap .numpad{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;padding:4px 14px 2px;flex:1;align-content:end}
+.demo-wrap .nk{height:34px;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:600;color:#111827;border-radius:8px}
+.demo-wrap .nk svg{width:16px;height:16px;stroke:#111827;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.demo-wrap .succ-pg{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;background:#fff;padding:24px 20px;text-align:center}
+.demo-wrap .succ-check{width:56px;height:56px;background:#DCFCE7;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px;animation:pop .4s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pop{0%{transform:scale(0)}100%{transform:scale(1)}}
+.demo-wrap .succ-check svg{width:28px;height:28px;stroke:#16A34A;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.demo-wrap .succ-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:800;color:#111827;line-height:1.3}
+.demo-wrap .succ-sub{font-size:10px;color:#9CA3AF;margin-top:4px}
+.demo-wrap .succ-det{background:#EEF1F7;border-radius:12px;padding:12px 14px;width:100%;text-align:left;margin-top:16px}
+.demo-wrap .succ-det-t{font-size:10px;font-weight:700;color:#111827;margin-bottom:6px}
+.demo-wrap .succ-row{display:flex;justify-content:space-between;padding:4px 0;font-size:10px}.succ-lbl{color:#9CA3AF}.succ-val{font-weight:600;color:#111827}.succ-val.blue{color:#0C80F6;font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800}
+.demo-wrap .succ-btns{width:100%;margin-top:14px;display:flex;flex-direction:column;gap:6px}
+.demo-wrap .succ-btn{padding:10px;border-radius:12px;font-size:12px;font-weight:700;text-align:center;border:none;font-family:'DM Sans',sans-serif}
+.demo-wrap .succ-btn.blue{background:linear-gradient(145deg,#0C80F6,#0A6AD4);color:#fff;box-shadow:0 4px 12px rgba(12,128,246,.25)}
+.demo-wrap .succ-btn.outline{background:#fff;color:#0C80F6;border:1.5px solid #E5E7EB}
+</style>
 </head>
 <body>
 
@@ -187,36 +286,87 @@
         </div>
     </div>
     <div class="hero-phone fade-in">
-        <div class="phone">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-                <div class="p-status"><span>9:41</span><div class="p-status-icons"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.24 4.24 0 00-6 0zm-4-4l2 2a7.07 7.07 0 0110 0l2-2c-3.87-3.87-10.13-3.87-14 0z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg></div></div>
-                <div class="p-content">
-                    <div class="p-top-actions">
-                        <svg class="p-top-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/></svg>
-                        <svg class="p-top-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                    </div>
-                    <div class="p-profile"><div class="p-avatar">LC</div><div class="p-name">Luis Carrillo</div><div class="p-handle">@luis</div></div>
-                    <div class="p-quick-row">
-                        <div class="p-quick-btn"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Mi QR</div>
-                        <div class="p-quick-btn"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>0 amigos</div>
-                    </div>
-                    <div class="p-tabs"><div class="p-tab active"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 10h20"/></svg>Billetera</div><div class="p-tab"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>Transacciones</div></div>
-                    <div class="p-balance-card"><div class="p-bal-label">Saldo</div><div class="p-bal-amount">$0.00</div></div>
-                    <div class="p-action-row"><div class="p-action-btn outline">Transferir</div><div class="p-action-btn filled">Agregar</div></div>
-                    <div class="p-bank"><div class="p-bank-name">Banamex</div><div class="p-bank-id">****cb0b</div></div>
-                    <div class="p-bank"><div class="p-bank-name">Banco Azteca</div><div class="p-bank-id">****8fac</div></div>
-                    <div class="p-add-bank"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>Agregar cuenta bancaria</div>
-                    <div class="p-bottom-nav">
-                        <div class="p-nav-item"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75"/></svg>Inicio</div>
-                        <div class="p-nav-item"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>Amigos</div>
-                        <div class="p-nav-center"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 4.5v15m7.5-7.5h-15"/></svg></div>
-                        <div class="p-nav-item"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.564A.562.562 0 019 14.437V9.564z"/></svg>Billetera</div>
-                        <div class="p-nav-item"><div style="width:22px;height:22px;border-radius:50%;background:#e5e7eb;display:flex;align-items:center;justify-content:center;font-size:0.5rem;font-weight:800;margin:0 auto 2px;color:#6b7280;">LC</div>Perfil</div>
-                    </div>
-                </div>
-            </div>
+        <div class="demo-wrap">
+        <div class="phone"><div class="phone-screen">
+<div class="sbar-top"><span>9:41</span><span style="display:flex;gap:4px;align-items:center"><svg width="12" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg><svg width="14" height="10" viewBox="0 0 22 14" fill="currentColor"><rect x="0" y="4" width="3" height="10" rx="1"/><rect x="5" y="2" width="3" height="12" rx="1"/><rect x="10" y="0" width="3" height="14" rx="1"/><rect x="16" y="3" width="5" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="17.5" y="5" width="2" height="7" rx=".5"/></svg></span></div>
+<div class="tap" id="cursor"></div>
+
+<button class="replay" id="replayBtn" onclick="startDemo()">↻ Repetir</button>
+
+<!-- S1: P-TAB -->
+<div class="scr active" id="s1">
+<div class="hero-bg" style="padding-bottom:18px"><div style="height:20px"></div>
+<div class="greet">Hola, Aureliano 👋</div><div class="greet-sub">Tienes solicitudes pendientes</div>
+<div class="act-row">
+<div class="act-btn primary pulse" id="enviarBtn"><div class="act-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></div><span class="act-lbl">Enviar</span></div>
+<div class="act-btn secondary"><div class="act-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div><span class="act-lbl">Solicitar</span></div>
+<div class="act-btn secondary"><div class="act-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></div><span class="act-lbl">Dividir</span></div>
+</div></div>
+<div class="curve"></div>
+<div style="flex:1;overflow:hidden">
+<div class="sec-hdr"><div class="sec-title">Solicitudes Pendientes <span class="sec-badge">3</span></div><div class="sec-link">Ver todo</div></div>
+<div class="req-card"><div class="req-top"><div class="av" style="background:linear-gradient(145deg,#10b981,#059669)">LC</div><div><div class="req-nm">Luis Carrillo</div><div class="req-note">hh</div></div><div class="req-amt"><div class="req-val">$55.00</div><div class="req-time">30m</div></div></div><div class="req-badge in"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg> Te pide</div><div class="req-btns"><div class="req-btn ghost">Ignorar</div><div class="req-btn blue">Pagar</div></div></div>
+<div class="req-card"><div class="req-top"><div class="av" style="background:linear-gradient(145deg,#ec4899,#db2777)">AF</div><div><div class="req-nm">Andres Fernandez</div><div class="req-note">Test Split</div></div><div class="req-amt"><div class="req-val">$150.00</div><div class="req-time">4d</div></div></div><div class="req-badge out"><svg viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg> Te debe</div><div class="req-btns"><div class="req-btn ghost" style="background:#DCFCE7;color:#16A34A">Recordar</div></div></div>
+</div>
+<div class="fnav">
+<div class="fnav-i"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Inicio</div>
+<div class="fnav-i"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Amigos</div>
+<div class="pbtn"><svg viewBox="0 0 40 40"><path d="M8 10h24v5H8z" fill="white"/><path d="M15 10h6v24h-6z" fill="white"/><path d="M21 10h6a8 8 0 0 1 0 16h-6v-5h6a3 3 0 0 0 0-6h-6z" fill="white"/></svg></div>
+<div class="fnav-i"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Tarjetas</div>
+<div class="fnav-i"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mi Perfil</div>
+</div></div>
+
+<!-- S2: SEARCH -->
+<div class="scr" id="s2">
+<div class="ts"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg><div class="ts-title">Enviar</div></div>
+<div class="search-row"><div class="search-bar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Buscar amigos</div><div class="qr-btn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div></div>
+<div style="flex:1;overflow:hidden">
+<div class="flbl">Recomendaciones</div>
+<div class="friend" id="hugoRow"><div class="av">HF</div><div class="f-info"><div class="f-nm">Hugo Farias</div><div class="f-h">@hugo</div></div><div class="f-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div></div>
+<div class="friend"><div class="av" style="background:linear-gradient(145deg,#10b981,#059669)">LC</div><div class="f-info"><div class="f-nm">Luis Carrillo</div><div class="f-h">@luisc428</div></div><div class="f-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div></div>
+<div class="friend"><div class="av" style="background:linear-gradient(145deg,#f59e0b,#d97706)">AB</div><div class="f-info"><div class="f-nm">Alfredo Bazua</div><div class="f-h">@alfredob</div></div><div class="f-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div></div>
+<div class="friend"><div class="av" style="background:linear-gradient(145deg,#ec4899,#db2777)">AF</div><div class="f-info"><div class="f-nm">Andres Fernandez</div><div class="f-h">@andresf</div></div><div class="f-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div></div>
+<div class="friend"><div class="av" style="background:linear-gradient(145deg,#8b5cf6,#7c3aed)">PR</div><div class="f-info"><div class="f-nm">Paulo Reza</div><div class="f-h">@paulo</div></div><div class="f-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div></div>
+<div class="friend"><div class="av" style="background:linear-gradient(145deg,#6366f1,#4f46e5)">SK</div><div class="f-info"><div class="f-nm">Stone Kletecka</div><div class="f-h">@stone</div></div><div class="f-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div></div>
+</div></div>
+
+<!-- S3: AMOUNT -->
+<div class="scr" id="s3"><div class="amt-pg">
+<div class="amt-hdr"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg><div class="amt-hdr-t">Enviar</div><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+<div class="amt-recip"><div class="av" style="width:28px;height:28px;font-size:8px">HF</div><div><div style="font-size:11px;font-weight:600;color:#111827">Hugo Farias</div><div style="font-size:9px;color:#9CA3AF">@hugo</div></div></div>
+<div class="amt-area"><div class="amt-val" id="amtDisp">$0<span class="cents">.00</span></div></div>
+<div class="amt-mid">
+<div class="amt-bank"><div class="amt-bank-ic">B</div><div style="flex:1"><div class="amt-bank-nm">BBVA México</div><div class="amt-bank-dt">···· 15e2</div></div><svg style="width:13px;height:13px;stroke:#9CA3AF;stroke-width:2;fill:none" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+<div class="priv-row"><div class="priv-chip on">🔒 Privada</div><div class="priv-chip">👥 Amigos</div><div class="priv-chip">🌐 Pública</div></div>
+<div class="emoji-row"><div class="emoji-btn">🍕</div><div class="emoji-btn">🍔</div><div class="emoji-btn">☕</div><div class="emoji-btn">🍺</div><div class="emoji-btn">🎬</div><div class="emoji-btn">🚗</div><div class="emoji-btn">🏠</div><div class="emoji-btn">🎁</div><div class="emoji-btn">🎉</div><div class="emoji-btn">💰</div></div>
+<input class="desc-inp" type="text" placeholder="¿Para qué es?" id="descInp" readonly>
+<div class="send-btn off" id="sendBtn">Enviar</div>
+</div>
+<div class="numpad">
+<div class="nk">1</div><div class="nk">2</div><div class="nk">3</div>
+<div class="nk">4</div><div class="nk">5</div><div class="nk">6</div>
+<div class="nk">7</div><div class="nk">8</div><div class="nk">9</div>
+<div class="nk" style="font-size:22px">.</div><div class="nk">0</div>
+<div class="nk"><svg viewBox="0 0 24 24"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/></svg></div>
+</div></div></div>
+
+<!-- S4: SUCCESS -->
+<div class="scr" id="s4"><div class="succ-pg">
+<div class="succ-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+<div class="succ-title">¡Listo! Dinero enviado<br>con éxito</div>
+<div class="succ-sub">Tu transacción ha sido procesada</div>
+<div class="succ-det"><div class="succ-det-t">Detalles de la transacción</div>
+<div class="succ-row"><span class="succ-lbl">Destinatario</span><span class="succ-val">Hugo Farias</span></div>
+<div class="succ-row"><span class="succ-lbl">Monto</span><span class="succ-val blue">$150.00</span></div>
+<div class="succ-row"><span class="succ-lbl">Descripción</span><span class="succ-val">cena 🍕</span></div>
+<div class="succ-row"><span class="succ-lbl">Desde</span><span class="succ-val">BBVA ····15e2</span></div>
+<div class="succ-row"><span class="succ-lbl">Tipo</span><span class="succ-val">🔒 Privada</span></div></div>
+<div class="succ-btns"><div class="succ-btn blue">Volver al inicio</div><div class="succ-btn outline">Compartir comprobante</div></div>
+</div></div>
+
+</div></div>
         </div>
+    </div>
     </div>
 </section>
 
@@ -295,6 +445,49 @@ document.getElementById('notifyBtn').addEventListener('click',function(){
         setTimeout(()=>document.getElementById('notifyEmail').style.borderColor='#e5e7eb',2000);
     }
 });
+
+// === DEMO ANIMATION ===
+
+var C=document.getElementById('cursor'),S=[document.getElementById('s1'),document.getElementById('s2'),document.getElementById('s3'),document.getElementById('s4')];
+function setDot(n){}
+function tap(x,y,cb){C.style.left=x+'px';C.style.top=y+'px';C.className='tap show';setTimeout(function(){C.className='tap show press';setTimeout(function(){C.className='tap';if(cb)cb()},200)},350)}
+function slide(a,b){S[b].className='scr slide-right';void S[b].offsetWidth;S[a].className='scr animating slide-left';S[b].className='scr animating active';setDot(b)}
+function typeDigits(digits,cb){var d=document.getElementById('amtDisp'),b=document.getElementById('sendBtn'),val='',i=0;function next(){if(i>=digits.length){if(cb)setTimeout(cb,300);return}val+=digits[i];var n=parseFloat(val)||0;if(val.indexOf('.')>-1){var p=val.split('.');d.innerHTML='$'+p[0]+'<span class="cents">.'+(p[1]||'0').slice(0,2).padEnd(2,'0')+'</span>'}else{d.innerHTML='$'+val+'<span class="cents">.00</span>'}if(n>0){b.className='send-btn on';b.textContent='Enviar $'+n.toFixed(2)}i++;setTimeout(next,300)}next()}
+function startDemo(){
+document.getElementById('replayBtn').style.display='none';
+document.getElementById('amtDisp').innerHTML='$0<span class="cents">.00</span>';
+document.getElementById('sendBtn').className='send-btn off';document.getElementById('sendBtn').textContent='Enviar';
+document.getElementById('descInp').value='';document.getElementById('hugoRow').className='friend';
+document.getElementById('enviarBtn').className='act-btn primary pulse';
+S.forEach(function(s){s.className='scr'});S[0].className='scr active';setDot(0);
+setTimeout(function(){
+  document.getElementById('enviarBtn').className='act-btn primary';
+  tap(55,222,function(){setTimeout(function(){
+    slide(0,1);
+    setTimeout(function(){
+      tap(130,140,function(){
+        document.getElementById('hugoRow').className='friend sel';
+        setTimeout(function(){
+          slide(1,2);
+          setTimeout(function(){
+            typeDigits(['1','5','0'],function(){
+              document.getElementById('descInp').value='cena 🍕';
+              setTimeout(function(){
+                tap(133,447,function(){setTimeout(function(){
+                  slide(2,3);
+                  setTimeout(function(){startDemo()},4000);
+                },250)});
+              },800);
+            });
+          },500);
+        },350);
+      });
+    },1200);
+  },250)});
+},2000);
+}
+startDemo();
+
 </script>
 </body>
 </html>
