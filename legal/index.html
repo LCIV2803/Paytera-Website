@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paytera — Legal</title>
+  <meta name="description" content="Información legal, aviso de privacidad y términos de uso de Paytera.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #016FFF;
+      --dark: #1B1C1D;
+      --body: #434343;
+      --light-bg: #F7F8FA;
+      --border: #E2E5EA;
+      --white: #FFFFFF;
+      --warning-bg: #FFF8E6;
+      --warning-border: #F5A623;
+      --warning-text: #7A5B00;
+      --info-bg: #EBF5FF;
+      --info-border: #016FFF;
+      --info-text: #003D8F;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--body);
+      background: var(--white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--blue);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-back {
+      font-size: 14px;
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+    .nav-back:hover { opacity: 0.7; }
+
+    /* LAYOUT */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 64px 0 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      font-size: 16px;
+      color: #6B7280;
+    }
+    .updated {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #9CA3AF;
+      background: var(--light-bg);
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+
+    /* TABLE OF CONTENTS */
+    .toc {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .toc h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #9CA3AF;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .toc a {
+      display: block;
+      padding: 8px 0;
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+    .toc a:hover { opacity: 0.7; }
+
+    /* SECTIONS */
+    .section {
+      padding: 48px 0 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section:last-of-type { border-bottom: none; }
+
+    .section h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+      margin-bottom: 24px;
+    }
+    .section h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--dark);
+      margin: 32px 0 12px;
+    }
+    .section p {
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+    .section ul {
+      margin: 0 0 16px 20px;
+      font-size: 15px;
+    }
+    .section ul li {
+      margin-bottom: 8px;
+    }
+
+    /* CALLOUT BOXES */
+    .callout {
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      border-left: 4px solid;
+    }
+    .callout-warning {
+      background: var(--warning-bg);
+      border-color: var(--warning-border);
+      color: var(--warning-text);
+    }
+    .callout-info {
+      background: var(--info-bg);
+      border-color: var(--info-border);
+      color: var(--info-text);
+    }
+    .callout strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .callout p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      color: #9CA3AF;
+      font-size: 13px;
+    }
+    footer a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      .section h2 { font-size: 20px; }
+      .container { padding: 0 16px; }
+      .hero { padding: 40px 0 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <a href="https://paytera.mx" class="logo">Paytera</a>
+      <a href="https://paytera.mx" class="nav-back">&larr; Volver a paytera.mx</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="container">
+      <h1>Información Legal</h1>
+      <p>Términos de uso, aviso de privacidad y descargo de responsabilidad de Paytera.</p>
+      <span class="updated">Última actualización: Marzo 2026</span>
+    </div>
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="container">
+      <h2>Contenido</h2>
+      <a href="#disclaimer">1. Descargo de Responsabilidad</a>
+      <a href="#naturaleza">2. Naturaleza de los Servicios</a>
+      <a href="#terminos">3. Términos de Uso</a>
+      <a href="#privacidad">4. Aviso de Privacidad</a>
+      <a href="#riesgos">5. Factores de Riesgo</a>
+      <a href="#contacto">6. Contacto</a>
+    </div>
+  </div>
+
+  <!-- SECTION 1: DISCLAIMER -->
+  <div class="section" id="disclaimer">
+    <div class="container">
+      <h2>1. Descargo de Responsabilidad</h2>
+
+      <div class="callout callout-warning">
+        <strong>Aviso Importante</strong>
+        <p>Paytera no es una institución financiera ni una entidad financiera autorizada, regulada o supervisada por ninguna autoridad financiera mexicana, incluyendo la Comisión Nacional Bancaria y de Valores (CNBV), el Banco de México (Banxico) o la Secretaría de Hacienda y Crédito Público (SHCP).</p>
+      </div>
+
+      <p>Slydertransfer, S.A.P.I. de C.V., que opera bajo la marca comercial "Paytera", es una sociedad mercantil constituida bajo las leyes de los Estados Unidos Mexicanos. Paytera opera como una plataforma tecnológica que facilita el envío y recepción de pagos entre personas.</p>
+
+      <p>Ningún servicio ofrecido por Paytera está supervisado, garantizado o respaldado por autoridad financiera mexicana alguna. Los servicios de custodia de activos digitales asociados a la operación de la plataforma se prestan fuera del territorio mexicano a través de socios financieros debidamente autorizados en sus respectivas jurisdicciones.</p>
+
+      <p>El uso de los productos y servicios de Paytera involucra riesgos inherentes que cada usuario debe evaluar de forma independiente antes de utilizar la plataforma.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 2: NATURALEZA -->
+  <div class="section" id="naturaleza">
+    <div class="container">
+      <h2>2. Naturaleza de los Servicios</h2>
+
+      <p>Paytera es una aplicación móvil que permite a los usuarios enviar dinero a amigos y contactos utilizando nombres de usuario (@username), dividir cuentas entre grupos y solicitar pagos de forma sencilla.</p>
+
+      <h3>Qué es Paytera</h3>
+      <ul>
+        <li>Una plataforma tecnológica para envío y recepción de pagos entre personas</li>
+        <li>Una herramienta para dividir cuentas y coordinar pagos en grupo</li>
+        <li>Una aplicación que opera a través de socios financieros regulados en sus respectivas jurisdicciones</li>
+      </ul>
+
+      <h3>Qué NO es Paytera</h3>
+      <ul>
+        <li>Paytera NO es un banco ni una institución de crédito</li>
+        <li>Paytera NO es una institución de fondos de pago electrónico (IFPE)</li>
+        <li>Paytera NO es una casa de bolsa ni un asesor de inversiones</li>
+        <li>Paytera NO capta recursos del público en territorio mexicano</li>
+        <li>Paytera NO mantiene depósitos de fondos por cuenta de terceros en México</li>
+        <li>Paytera NO ofrece servicios de inversión, rendimientos o intereses sobre saldos</li>
+      </ul>
+
+      <div class="callout callout-info">
+        <strong>Socios Financieros</strong>
+        <p>Las operaciones de procesamiento de pagos se realizan a través de Klu Tech, S.A.P.I. de C.V., Institución de Fondos de Pago Electrónico, debidamente autorizada por las autoridades financieras mexicanas. Paytera no es responsable de los servicios prestados directamente por sus socios financieros.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: TÉRMINOS -->
+  <div class="section" id="terminos">
+    <div class="container">
+      <h2>3. Términos de Uso</h2>
+
+      <h3>3.1 Aceptación</h3>
+      <p>Al descargar, acceder o utilizar la aplicación de Paytera, el usuario acepta en su totalidad los presentes Términos de Uso. Si no está de acuerdo con alguno de estos términos, deberá abstenerse de utilizar la plataforma.</p>
+
+      <h3>3.2 Elegibilidad</h3>
+      <p>Para utilizar Paytera, el usuario debe ser mayor de 18 años, residir en los Estados Unidos Mexicanos y contar con una identificación oficial vigente. Paytera se reserva el derecho de solicitar documentación adicional para verificar la identidad del usuario en cumplimiento con la normatividad aplicable en materia de prevención de lavado de dinero y financiamiento al terrorismo.</p>
+
+      <h3>3.3 Cuenta de Usuario</h3>
+      <p>Cada usuario es responsable de mantener la confidencialidad de sus credenciales de acceso. Paytera no será responsable por el uso no autorizado de la cuenta del usuario que resulte de la falta de diligencia en la protección de sus datos de acceso.</p>
+
+      <h3>3.4 Uso Aceptable</h3>
+      <p>El usuario se compromete a utilizar Paytera exclusivamente para fines lícitos. Queda prohibido el uso de la plataforma para actividades ilícitas, fraudulentas, de lavado de dinero o financiamiento al terrorismo. Paytera se reserva el derecho de suspender o cancelar cuentas que violen estos términos.</p>
+
+      <h3>3.5 Comisiones</h3>
+      <p>Paytera podrá cobrar comisiones por ciertos servicios, las cuales serán comunicadas al usuario de forma clara y previa a la realización de cualquier operación sujeta a cargo. El detalle de las comisiones vigentes estará disponible dentro de la aplicación.</p>
+
+      <h3>3.6 Limitación de Responsabilidad</h3>
+      <p>Paytera no será responsable por interrupciones del servicio causadas por fuerza mayor, fallas de terceros proveedores, mantenimiento programado o circunstancias fuera de su control razonable. Paytera hará esfuerzos comercialmente razonables para mantener la disponibilidad de la plataforma.</p>
+
+      <h3>3.7 Modificaciones</h3>
+      <p>Paytera se reserva el derecho de modificar estos Términos de Uso en cualquier momento. Los cambios serán notificados a los usuarios a través de la aplicación o por correo electrónico. El uso continuado de la plataforma después de la notificación de cambios constituye aceptación de los términos modificados.</p>
+
+      <h3>3.8 Legislación Aplicable</h3>
+      <p>Los presentes Términos de Uso se rigen por las leyes vigentes en los Estados Unidos Mexicanos. Para la resolución de cualquier controversia, las partes se someten a la jurisdicción de los tribunales competentes de la Ciudad de México.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 4: PRIVACIDAD -->
+  <div class="section" id="privacidad">
+    <div class="container">
+      <h2>4. Aviso de Privacidad</h2>
+
+      <p>En cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares y su Reglamento, Slydertransfer, S.A.P.I. de C.V. ("Paytera"), con domicilio en Ciudad de México, México, y correo electrónico de contacto <strong>privacidad@paytera.mx</strong>, pone a disposición el presente Aviso de Privacidad.</p>
+
+      <h3>4.1 Datos Personales que Recabamos</h3>
+      <p>Para la prestación de nuestros servicios, Paytera podrá recabar los siguientes datos personales:</p>
+      <ul>
+        <li><strong>Datos de identificación:</strong> nombre completo, fecha de nacimiento, nacionalidad, CURP, RFC (cuando aplique)</li>
+        <li><strong>Datos de contacto:</strong> correo electrónico, número telefónico</li>
+        <li><strong>Datos financieros:</strong> información de tarjetas de débito o crédito, CLABE interbancaria (para retiros)</li>
+        <li><strong>Datos de uso:</strong> información sobre transacciones realizadas, historial de pagos, dirección IP, tipo de dispositivo</li>
+        <li><strong>Identificación oficial:</strong> copia de identificación oficial vigente para procesos de verificación de identidad (KYC)</li>
+      </ul>
+
+      <h3>4.2 Finalidades del Tratamiento</h3>
+      <p>Los datos personales serán utilizados para las siguientes finalidades primarias (necesarias para la prestación del servicio):</p>
+      <ul>
+        <li>Crear y administrar la cuenta del usuario</li>
+        <li>Procesar transacciones de envío, recepción y solicitud de pagos</li>
+        <li>Verificar la identidad del usuario en cumplimiento con la normatividad aplicable</li>
+        <li>Cumplir con obligaciones legales en materia de prevención de lavado de dinero y financiamiento al terrorismo</li>
+        <li>Brindar soporte y atención al usuario</li>
+        <li>Prevenir fraudes y actividades ilícitas</li>
+      </ul>
+      <p>Finalidades secundarias (no necesarias para el servicio, pero que nos permiten mejorar tu experiencia):</p>
+      <ul>
+        <li>Enviar comunicaciones sobre nuevas funcionalidades, promociones o actualizaciones de la plataforma</li>
+        <li>Realizar estudios internos sobre el uso de la aplicación para mejorar nuestros servicios</li>
+      </ul>
+      <p>Si no desea que sus datos sean tratados para las finalidades secundarias, puede enviar un correo a privacidad@paytera.mx indicando su negativa.</p>
+
+      <h3>4.3 Transferencia de Datos</h3>
+      <p>Paytera podrá transferir datos personales a los siguientes terceros, sin requerir consentimiento adicional del titular, de conformidad con la ley:</p>
+      <ul>
+        <li>Socios financieros (procesadores de pagos y entidades reguladas) para la ejecución de transacciones</li>
+        <li>Proveedores de servicios de verificación de identidad (KYC/AML)</li>
+        <li>Autoridades competentes cuando sea requerido por ley o mandato judicial</li>
+      </ul>
+
+      <h3>4.4 Derechos ARCO</h3>
+      <p>El titular de los datos tiene derecho a Acceder, Rectificar, Cancelar u Oponerse al tratamiento de sus datos personales (derechos ARCO). Para ejercer estos derechos, el titular deberá enviar una solicitud al correo privacidad@paytera.mx indicando su nombre completo, descripción del derecho que desea ejercer y documentación que acredite su identidad. Paytera responderá en un plazo máximo de 20 días hábiles.</p>
+
+      <h3>4.5 Medidas de Seguridad</h3>
+      <p>Paytera implementa medidas de seguridad administrativas, técnicas y físicas para proteger los datos personales contra daño, pérdida, alteración, destrucción o uso, acceso o tratamiento no autorizado, incluyendo cifrado de datos en tránsito y en reposo, controles de acceso basados en roles y monitoreo continuo de actividad.</p>
+
+      <h3>4.6 Cookies y Tecnologías de Rastreo</h3>
+      <p>El sitio web paytera.mx puede utilizar cookies y tecnologías similares para mejorar la experiencia del usuario. El usuario puede configurar su navegador para rechazar cookies, aunque esto puede afectar la funcionalidad del sitio.</p>
+
+      <h3>4.7 Modificaciones al Aviso</h3>
+      <p>Paytera se reserva el derecho de modificar el presente Aviso de Privacidad. Cualquier cambio será comunicado a través de la aplicación, el sitio web paytera.mx o por correo electrónico.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 5: RIESGOS -->
+  <div class="section" id="riesgos">
+    <div class="container">
+      <h2>5. Factores de Riesgo</h2>
+
+      <p>El uso de Paytera implica ciertos riesgos que el usuario debe considerar:</p>
+
+      <ul>
+        <li><strong>Riesgo tecnológico:</strong> La plataforma depende de infraestructura tecnológica que puede experimentar interrupciones, fallas o vulnerabilidades de seguridad.</li>
+        <li><strong>Riesgo operativo:</strong> Las transacciones dependen del correcto funcionamiento de los socios financieros y proveedores de servicios de Paytera.</li>
+        <li><strong>Riesgo regulatorio:</strong> Cambios en la legislación o interpretación regulatoria en México podrían afectar la disponibilidad o características de los servicios ofrecidos.</li>
+        <li><strong>Riesgo de terceros:</strong> Paytera opera a través de socios financieros regulados en sus respectivas jurisdicciones. El desempeño de estos socios está fuera del control directo de Paytera.</li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <strong>Advertencia</strong>
+        <p>Antes de utilizar Paytera, asegúrese de comprender los servicios ofrecidos y los riesgos asociados. Paytera no garantiza la disponibilidad ininterrumpida del servicio. En caso de duda, consulte a un asesor financiero o legal independiente.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: CONTACTO -->
+  <div class="section" id="contacto">
+    <div class="container">
+      <h2>6. Contacto</h2>
+
+      <p>Para cualquier consulta relacionada con este documento, los servicios de Paytera, o para ejercer sus derechos en materia de protección de datos personales:</p>
+
+      <ul>
+        <li><strong>Empresa:</strong> Slydertransfer, S.A.P.I. de C.V.</li>
+        <li><strong>Marca comercial:</strong> Paytera</li>
+        <li><strong>Correo general:</strong> hola@paytera.mx</li>
+        <li><strong>Correo de privacidad:</strong> privacidad@paytera.mx</li>
+        <li><strong>Sitio web:</strong> paytera.mx</li>
+        <li><strong>Ubicación:</strong> Ciudad de México, México</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Slydertransfer, S.A.P.I. de C.V. Todos los derechos reservados.</p>
+      <p style="margin-top: 8px;"><a href="https://paytera.mx">paytera.mx</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
